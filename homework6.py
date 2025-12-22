@@ -32,7 +32,7 @@ def list_genres(df):
         )
     )
 genres = list_genres(movies_df)
-def reccomend_movies_by_genre(genre=None, mood=None, rating=None, top_n=5):
+def reccomend_movies_by_genre(genre=None, mood=None, rating=None, top_n=10):
     filtered_df = movies_df.copy()
     if genre:
         filtered_df = filtered_df[filtered_df['genres'].str.contains(genre, case=False, na=False)]
@@ -81,7 +81,8 @@ def main():
         mood = input(Fore.YELLOW + "Describe your current mood (optional): ")
         rating_input = input(Fore.YELLOW + "Minimum IMDB rating (0-10, optional): ")
         rating = float(rating_input) if rating_input else None
-        recommendations = reccomend_movies_by_genre(genre=genre, mood=mood, rating=rating, top_n=5)
+        recommendations = reccomend_movies_by_genre(genre=genre, mood=mood, rating=rating, top_n=10)
         print_recommendations(recommendations) 
 if __name__ == "__main__":
     main()
+
