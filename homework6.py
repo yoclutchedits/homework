@@ -71,6 +71,7 @@ def main():
     name = input(Fore.YELLOW + "What's your name? ")
     print(Fore.GREEN + f"Nice to meet you, {name}!")
     while True:
+        time.sleep(2)
         print(Fore.GREEN + "\nAvailable genres:")
         for g in genres:
             print(Fore.CYAN + f"- {g}")
@@ -82,7 +83,10 @@ def main():
         rating_input = input(Fore.YELLOW + "Minimum IMDB rating (0-10, optional): ")
         rating = float(rating_input) if rating_input else None
         recommendations = reccomend_movies_by_genre(genre=genre, mood=mood, rating=rating, top_n=10)
+         print('loading.......')
+        time.sleep(3)
         print_recommendations(recommendations) 
 if __name__ == "__main__":
     main()
+
 
