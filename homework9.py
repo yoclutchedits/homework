@@ -1,0 +1,22 @@
+import cv2
+import matplotlib.pyplot as plt
+image = cv2.imread('example.jpg')
+image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+height, width, _ = image_rgb.shape
+arrow_start = (width - 200, 200)
+arrow_end = (width - 200, height - 100)
+cv2.arrowedLine(image_rgb, arrow_start, arrow_end, (255, 255, 0), 2, tipLength=0.02)
+cv2.arrowedLine(image_rgb, arrow_end, arrow_start, (255, 255, 0), 2, tipLength=0.02)
+height_label_position = (arrow_start[0] - 150, (arrow_start[1] + arrow_end[1]) // 2)
+cv2.putText(image_rgb,'Height',(height_label_position[0],height_label_position[1]),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,0),2)
+width_arrow_start = (200, height - 100)
+width_arrow_end = (width - 200, height - 100)
+cv2.arrowedLine(image_rgb, width_arrow_start, width_arrow_end, (0, 255, 0), 2, tipLength=0.02)
+cv2.arrowedLine(image_rgb, width_arrow_end, width_arrow_start, (0, 255, 0), 2, tipLength=0.02)
+width_label_position = ((width_arrow_start[0] + width_arrow_end[0]) // 2 - 100,width_arrow_start[1] - 15)
+cv2.putText(image_rgb,f'Width',(width_label_position[0],width_label_position[1]),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0, 255, 0),2)
+plt.figure(figsize=(12, 8))
+plt.imshow(image_rgb)
+plt.title('Annotated Image with Height and Width')
+plt.axis('off')
+plt.show()
