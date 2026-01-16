@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
 model=load_model(
-    r"C:\Users\Acer\OneDrive\Attachments\Desktop\python\archive\face_model.h5"
+    r"C:\Users\Acer\OneDrive\Attachments\Desktop\python\archive\face_model.h5"#input your fer2013
 )
 face_cascade=cv2.CascadeClassifier(cv2.data.haarcascades+"haarcascade_frontalface_default.xml")
 emotion_labels=['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
@@ -30,4 +30,5 @@ while True:
     if cv2.waitKey(1)&0xFF==ord('q'):
         break
 cap.release()
+
 cv2.destroyAllWindows()
