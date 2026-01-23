@@ -13,7 +13,7 @@ print(Fore.MAGENTA + 'welcome to photo/video editor ai')
 while True:
     print(Fore.MAGENTA + 'select an option:')
     print(Fore.MAGENTA + '1. image editor')
-    print(Fore.MAGENTA + '2. video editor')
+    print(Fore.MAGENTA + '2. video capture')
     print(Fore.MAGENTA + '3. exit')
     choice = input(Fore.MAGENTA + 'enter your choice (1-3): ')
     if choice == '1':
@@ -188,3 +188,4 @@ while True:
         break
     else:
         print(Fore.RED + 'invalid choice')
+
