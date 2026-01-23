@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import time
 from colorama import Fore, Style , init
 init(autoreset=True)
 print(Fore.CYAN + 'welcome to the real-time video filter application with face detection!')
@@ -151,3 +150,4 @@ def main():
     cv2.destroyAllWindows()
 if __name__=='__main__':
     main()
+
