@@ -13,7 +13,6 @@ def hf(prompt: str, temperature: float = 0.3, max_tokens: int = 512) -> str:
     for m in models:
         try:
             c = InferenceClient(token=key)
-            # FIX: Added model=m so it actually uses the loop's model
             r = c.chat_completions(
                 model=m,
                 messages=[{"role": "user", "content": prompt}],
