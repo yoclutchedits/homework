@@ -120,3 +120,4 @@ def bonus_pseudo_streaming():
         pseudo_stream(response)
 if __name__ == "__main__":
     main()
+    bonus_pseudo_streaming()
